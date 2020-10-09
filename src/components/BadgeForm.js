@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class BadgeForm extends Component {
+    state ={}
     handleChange = (e) => {
-        console.log({
-            name: e.target.name,
-            value: e.target.value
+        this.setState({
+            [e.target.name]: e.target.value,
         })
     }
 
@@ -15,6 +15,7 @@ class BadgeForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form Was Submited")
+        console.log(this.state)
     }
 
     render() {
@@ -25,11 +26,21 @@ class BadgeForm extends Component {
 
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label>Nombre Completo</label>
-                        <input onChange={this.handleChange} className="form-control" type="text" name="firstName" />
+                        <label>First Name</label>
+                        <input onChange={this.handleChange} className="form-control" type="text" name="firstName" value={this.state.firstName} />
+                        <label>Last Name</label>
+                        <input onChange={this.handleChange} className="form-control" type="text" name="lastName" value={this.state.lastName} />
+                        <label>Email</label>
+                        <input onChange={this.handleChange} className="form-control" type="email" name="email" value={this.state.email} />
+                        <label>Job Title</label>
+                        <input onChange={this.handleChange} className="form-control" type="text" name="jobTitle" value={this.state.jobTitle} />
+                        <label>Twitter</label>
+                        <input onChange={this.handleChange} className="form-control" type="text" name="twitter" value={this.state.twitter} />
                         <button onClick={this.handleClick} className="btn btn-primary">Save</button>
                     </div>
                 </form>
+
+                
             </div>
         );
     }

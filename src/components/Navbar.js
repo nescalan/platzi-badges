@@ -1,22 +1,22 @@
-import React from 'react';
-import logo from '../images/logo.svg';
-import './styles/Navbar.css';
+import React from "react";
+import logo from "../images/logo.svg";
+import "./styles/Navbar.css";
 
 class Navbar extends React.Component {
-    state = {}
-    render() {
-        return (
-            <div className="Navbar">
-                <div className="container-fluid">
-                    <a className="Navbar__brand" to="/">
-                        <img className="Navbar__brand-logo" src={logo} alt="Logo" />
-                        <span className="font-weight-light">Platzi</span>
-                        <span className="font-weight-bold">Conf</span>
-                    </a>
-                </div>
-            </div>
-        );
-    }
+  state = {};
+  render() {
+    return (
+      <div className="Navbar">
+        <div className="container-fluid">
+          <a className="Navbar__brand" to="/">
+            <img className="Navbar__brand-logo" src={logo} alt="Logo" />
+            <span className="font-weight-light">Platzi</span>
+            <span className="font-weight-bold">Conf</span>
+          </a>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Navbar;
